@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="value" id="one">Principle
+    <input type="value" id="one">Rate
+    <input type="value" id="one">Time
+    <input type="submit" id="two">
+    <div id=1></div>
+    <script>
+      document.getElementById("two").onclick=function(){
+        var p=document.getElementById("one").value;
+        var r=document.getElementById("one").value;
+        var t=document.getElementById("one").value;
+        var i=(p*t*r)/100;
+        document.getElementById(1).innerHTML=i;
+      }
+    </script>
+  </body>
+</html>

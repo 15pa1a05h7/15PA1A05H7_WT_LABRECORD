@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="one">
+    <div id="two"></div>
+  </body>
+  <script>
+    document.getElementById("one").onkeyup=function(){
+      var s=document.getElementById("one").value;
+      var s1=s.toUpperCase();
+      document.getElementById("two").innerHTML=s1;
+    }
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="label" id="one">
+<div id="two"></div>
+    <script>
+    document.getElementById("one").onkeyup=function(){
+        var count=0;
+          var n;
+          n=document.getElementById("one").value;
+      for(var i=2;i<=n;i++){
+        if(n%i==0)
+        count++;
+      }
+        if(count==1)
+         document.getElementById("two").innerHTML = "Prime Number";
+
+      else
+         document.getElementById("two").innerHTML = "Not a Prime Number";
+      }
+    </script>
+     </body>
+</html>

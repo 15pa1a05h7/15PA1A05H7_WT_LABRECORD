@@ -1,0 +1,108 @@
+/* Computer Configuration
+
+    Motherboard
+
+    Processor
+
+    RAM
+
+    Hard Disk
+
+    Monitor
+
+    Keyboard
+
+    Mouse
+    
+    */
+    <!DOCTYPE computer
+[
+<!ELEMENT computer (motherboard,processor,RAM,harddisk,monitor,keyboard,mouse)>
+<!ELEMENT motherboard (#PCDATA)>
+<!ELEMENT processor (#PCDATA)>
+<!ELEMENT RAM (#PCDATA)>
+<!ELEMENT harddisk (#PCDATA)>
+<!ELEMENT monitor (#PCDATA)>
+<!ELEMENT keyboard (#PCDATA)>
+<!ELEMENT  mouse (#PCDATA)>
+]>
+<?xml version="1.0" encoding="UTF-8"?>
+<computer>
+	<config>
+		<motherboard>ATX</motherboard>
+		<processor>i5</processor>
+		<RAM>intro</RAM>
+		<harddisk>parallel ATA</harddisk>
+		<monitor>LCD</monitor>
+		<keyboard>hi</keyboard>
+		<mouse>wireless mouse</mouse>
+	</config>
+	<config>
+		<motherboard>pentium4</motherboard>
+		<processor>i3</processor>
+		<RAM>DDR</RAM>
+		<harddisk>serial ATA</harddisk>
+		<monitor>CRT</monitor>
+		<keyboard>QWERT</keyboard>
+		<mouse>mechanical mouse</mouse>
+	</config>
+	<config>
+		<motherboard>AT</motherboard>
+		<processor>i7</processor>
+		<RAM>DIMM</RAM>
+		<harddisk>SCSI</harddisk>
+		<monitor>TLA</monitor>
+		<keyboard>AZERTY</keyboard>
+		<mouse>optical mouse</mouse>
+	</config>
+	<config>
+		<motherboard>mini-ATX</motherboard>
+		<processor>i9</processor>
+		<RAM>RDRAM</RAM>
+		<harddisk>SSD</harddisk>
+		<monitor>LED</monitor>
+		<keyboard>HCESAR</keyboard>
+		<mouse>ball mouse</mouse>
+	</config>
+</computer>
+<xs:element name="computer">
+
+<xs:complexType>
+  <xs:sequence>
+    <xs:element name="motherboard" type="xs:string"/>
+    <xs:element name="processor" type="xs:string"/>
+    <xs:element name="RAM" type="xs:string"/>
+    <xs:element name="harddisk" type="xs:string"/>
+	<xs:element name="monitor" type="xs:string"/>
+	<xs:element name="keyboard" type="xs:string"/>
+	<xs:element name="mouse" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+</xs:element>
+
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <body>
+    <h2>Computer Configuration</h2>
+    <table border="1">
+      <tr bgcolor="#9acd32">
+        <th>motherboard</th>
+        <th>processor</th>
+      </tr>
+      <xsl:for-each select="computer/config">
+        <tr>
+          <td><xsl:value-of select="motherboard"/></td>
+          <td><xsl:value-of select="processor"/></td>
+        </tr>
+      </xsl:for-each>
+    </table>
+  </body>
+  </html>
+</xsl:template>
+
+</xsl:stylesheet>
